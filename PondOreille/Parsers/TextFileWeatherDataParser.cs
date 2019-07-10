@@ -29,27 +29,39 @@ namespace PondOreille.Parsers
                 return data;
             }
 
-            //parse all files into objects
+            LoadData(data);
+
+            return data;
+        }
+
+        private void LoadData(List<WeatherDataRecord> data)
+        {
             foreach (var file in Directory.GetFiles(SourcePath))
             {
                 var yearlyDataFile = File.ReadAllLines(file);
 
-                for(int i = 1; i < yearlyDataFile.Length; i++)
+                for (int i = 1; i < yearlyDataFile.Length; i++)
                 {
-                    var record = ParseLine(yearlyDataFile[i]);
+                    try
+                    {
+                        var record = ParseLine(yearlyDataFile[i]);
+                        data.Add(record);
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine($"Unable to parse line no: {i} in file: {file}");
+                    }
+
                 }
             }
-
-            //return list of data
-            return data;
         }
 
         private WeatherDataRecord ParseLine(string line)
         {
             var splitData = line.Split('\t');
 
-            var x = new WeatherDataRecord() {
-                Timestamp = ParseDate(splitData[0]),
+            var record = new WeatherDataRecord() {
+                Timestamp = DateTimeStringParser.ParseDateTimeString(splitData[0]),
                 AirTemperature = decimal.Parse(splitData[1]),
                 BarometricPressure = decimal.Parse(splitData[2]),
                 DewPoint = decimal.Parse(splitData[3]),
@@ -59,17 +71,7 @@ namespace PondOreille.Parsers
                 WindSpeed = decimal.Parse(splitData[7])
             };
 
-            return x;
-        }
-
-        private DateTime ParseDate(string dateString)
-        {
-            var year = int.Parse(dateString.Substring(0, 4));
-            var x = dateString.Substring(5, 2);
-            var month = int.Parse(dateString.Substring(5, 2));
-            var day = int.Parse(dateString.Substring(8, 10));
-
-            return new DateTime(year, month, day);
+            return record;
         }
 
         private bool IsDataFolderEmpty()
