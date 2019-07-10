@@ -17,25 +17,23 @@ namespace PondOreille.Parsers
 
         public IEnumerable<WeatherDataRecord> GetWeatherData()
         {
-            var data = new List<WeatherDataRecord>();
-
             if (!Directory.Exists(SourcePath))
             {
-                return data;
+                return new List<WeatherDataRecord>(); ;
             }
 
             if (IsDataFolderEmpty())
             {
-                return data;
+                return new List<WeatherDataRecord>(); ;
             }
 
-            LoadData(data);
-
-            return data;
+            return GetData();
         }
 
-        private void LoadData(List<WeatherDataRecord> data)
+        private List<WeatherDataRecord> GetData()
         {
+            var data = new List<WeatherDataRecord>();
+
             foreach (var file in Directory.GetFiles(SourcePath))
             {
                 var yearlyDataFile = File.ReadAllLines(file);
@@ -51,9 +49,10 @@ namespace PondOreille.Parsers
                     {
                         Console.WriteLine($"Unable to parse line no: {i} in file: {file}");
                     }
-
                 }
             }
+
+            return data;
         }
 
         private WeatherDataRecord ParseLine(string line)
