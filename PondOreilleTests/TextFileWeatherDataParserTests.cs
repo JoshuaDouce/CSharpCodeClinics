@@ -40,5 +40,20 @@ namespace Tests
             //cleanup
             dir.Delete();
         }
+
+        [Test]
+        public void GetWeatherData_WithValidData_Returns_PopulatedList()
+        {
+            //arrange
+            var dir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent;
+            var testFilesDir = dir.GetDirectories("TestFiles")[0];
+            var parser = new TextFileWeatherDataParser(testFilesDir.FullName);
+
+            //act
+            var result = parser.GetWeatherData();
+
+            //assert
+            Assert.That(result, Is.Not.Empty);
+        }
     }
 }
