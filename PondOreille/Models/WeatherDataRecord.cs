@@ -14,5 +14,11 @@ namespace PondOreille.Models
         public decimal WindDir { get; set; }
         public decimal WindGust { get; set; }
         public decimal WindSpeed { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Timestamp.ToLongDateString()} {Timestamp.ToLongTimeString()}|{AirTemperature}|{BarometricPressure}|" +
+                $"{DewPoint}|{Humidity}|{WindDir}|{WindGust}|{WindSpeed}";
+        }
     }
 }

@@ -2,7 +2,7 @@
   "profiles": {
     "PondOreille": {
       "commandName": "Project",
-      "commandLineArgs": "2012_10_10 2012_12_01"
+      "commandLineArgs": "2012_01_01 2012_01_10"
     }
   }
 }
