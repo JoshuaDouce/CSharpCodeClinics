@@ -9,9 +9,16 @@ namespace PondOreilleTests
 {
     public class TextFileWeatherDataParserTests
     {
+        private DirectoryInfo TestDataFolder;
+        private TextFileWeatherDataParser TextDataParser;
         [SetUp]
         public void Setup()
         {
+            TestDataFolder = 
+                Directory
+                .GetParent(Directory.GetCurrentDirectory()).Parent.Parent
+                .GetDirectories("TestFiles")[0];
+            TextDataParser = new TextFileWeatherDataParser(TestDataFolder.FullName);
         }
 
         [Test]
@@ -47,13 +54,8 @@ namespace PondOreilleTests
         [Test]
         public void GetWeatherData_WithValidData_Returns_PopulatedList()
         {
-            //arrange
-            var dir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent;
-            var testFilesDir = dir.GetDirectories("TestFiles")[0];
-            var parser = new TextFileWeatherDataParser(testFilesDir.FullName);
-
             //act
-            var result = parser.GetWeatherData();
+            var result = TextDataParser.GetWeatherData();
 
             //assert
             Assert.That(result, Is.Not.Empty);
@@ -61,13 +63,8 @@ namespace PondOreilleTests
 
         [Test]
         public void GetWeatherData_WithValidData_Returns_CorrectlyParsedRecord() {
-            //arrange
-            var dir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent;
-            var testFilesDir = dir.GetDirectories("TestFiles")[0];
-            var parser = new TextFileWeatherDataParser(testFilesDir.FullName);
-
             //act
-            var result = parser.GetWeatherData() as List<WeatherDataRecord>;
+            var result = TextDataParser.GetWeatherData() as List<WeatherDataRecord>;
 
             //assert
             Assert.That(result[0].Timestamp, Is.EqualTo(new DateTime(2012, 1, 1, 0, 2, 14)));
@@ -78,6 +75,32 @@ namespace PondOreilleTests
             Assert.That(result[0].WindDir, Is.EqualTo(346.4));
             Assert.That(result[0].WindGust, Is.EqualTo(11));
             Assert.That(result[0].WindSpeed, Is.EqualTo(3.6));
+        }
+
+        [Test]
+        public void GetWeatherData_WithOnlyFromDate_Returns_OnlyDataForThatDate()
+        {
+            //arrange
+            TextDataParser.FromDate = new DateTime(2013, 01, 01);
+
+            //act
+            var result = TextDataParser.GetWeatherData() as List<WeatherDataRecord>;
+
+            //assert
+            Assert.That(result.Count, Is.EqualTo(14));
+        }
+
+        [Test]
+        public void GetWeatherData_WithFromAndToDate_Returns_DataInThatRange() {
+            //arrange
+            TextDataParser.FromDate = new DateTime(2013, 01, 01);
+            TextDataParser.ToDate = new DateTime(2013, 01, 03);
+
+            //act
+            var result = TextDataParser.GetWeatherData() as List<WeatherDataRecord>;
+
+            //assert
+            Assert.That(result.Count, Is.EqualTo(223));
         }
     }
 }
