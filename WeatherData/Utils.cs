@@ -12,8 +12,8 @@ namespace WeatherData
 
             foreach (var record in weatherDataRecords)
             {
-                arrX.Add((double)record.BarometricPressure);
-                arrY.Add((record.Timestamp - start).TotalHours);
+                arrY.Add((double)record.BarometricPressure);
+                arrX.Add((record.Timestamp - start).TotalHours);
             }
 
             var (intersect, slope) = MathNet.Numerics.Fit.Line(arrX.ToArray(), arrY.ToArray());

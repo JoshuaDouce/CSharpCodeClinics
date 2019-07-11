@@ -83,7 +83,7 @@ namespace WeatherDataTests
             {
                 Timestamp = new DateTime(2012, 01, 01, 07, 01, 01),
                 AirTemperature = 10,
-                BarometricPressure = 20,
+                BarometricPressure = 16,
                 DewPoint = 10,
                 Humidity = 50,
                 WindDir = 10,
@@ -95,7 +95,7 @@ namespace WeatherDataTests
 
             //assert
             Assert.AreNotEqual(result, 0);
-            Assert.AreEqual(result, 0.59560229445506685);
+            Assert.AreEqual((decimal)result, (decimal)1.16071428571429);
         }
     }
 }
