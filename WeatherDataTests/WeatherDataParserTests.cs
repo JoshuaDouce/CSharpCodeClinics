@@ -78,32 +78,5 @@ namespace WeatherDataTests
             Assert.AreEqual(result[0].WindGust, 11m);
             Assert.AreEqual(result[0].WindSpeed, 3.6m);
         }
-
-        [TestMethod]
-        public void GetWeatherData_WithOnlyFromDate_Returns_OnlyDataForThatDate()
-        {
-            //arrange
-            TextDataParser.FromDate = new DateTime(2013, 01, 01);
-
-            //act
-            var result = TextDataParser.GetWeatherData() as List<WeatherDataRecord>;
-
-            //assert
-            Assert.AreEqual(result.Count, 14);
-        }
-
-        [TestMethod]
-        public void GetWeatherData_WithFromAndToDate_Returns_DataInThatRange()
-        {
-            //arrange
-            TextDataParser.FromDate = new DateTime(2013, 01, 01);
-            TextDataParser.ToDate = new DateTime(2013, 01, 03);
-
-            //act
-            var result = TextDataParser.GetWeatherData() as List<WeatherDataRecord>;
-
-            //assert
-            Assert.AreEqual(result.Count, 223);
-        }
     }
 }

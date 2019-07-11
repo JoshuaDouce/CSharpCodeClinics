@@ -49,7 +49,7 @@ namespace WeatherData
         {
             var data = new List<WeatherDataRecord>();
 
-            var files = FilterFiles(Directory.GetFiles(SourcePath));
+            var files = Directory.GetFiles(SourcePath);
 
             foreach (var file in files)
             {
@@ -86,30 +86,8 @@ namespace WeatherData
         private List<WeatherDataRecord> GetDataForFromDate(List<WeatherDataRecord> data)
         {
             return data
-                .Where(x => x.Timestamp.Year == FromDate.Value.Year)
-                .Where(x => x.Timestamp.Month == FromDate.Value.Month)
-                .Where(x => x.Timestamp.Day == FromDate.Value.Day)
+                .Where(x => x.Timestamp >= FromDate)
                 .ToList();
-        }
-
-        private string[] FilterFiles(string[] files)
-        {
-            var filteredFiles = new List<string>();
-
-            if (FromDate == null)
-            {
-                return files;
-            }
-
-            foreach (var file in files)
-            {
-                if (file.Contains(FromDate.Value.Year.ToString()))
-                {
-                    filteredFiles.Add(file);
-                }
-            }
-
-            return filteredFiles.ToArray();
         }
 
         private void LoadDataFromYearlyFile(List<WeatherDataRecord> data, string file)
