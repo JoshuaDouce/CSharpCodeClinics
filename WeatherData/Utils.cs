@@ -1,9 +1,7 @@
-﻿using PondOreille.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace PondOreille
+namespace WeatherData
 {
     public static class Utils
     {

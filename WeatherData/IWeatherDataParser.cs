@@ -1,8 +1,6 @@
-﻿using PondOreille.Models;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace PondOreille.Parsers
+namespace WeatherData
 {
     public interface IWeatherDataParser
     {

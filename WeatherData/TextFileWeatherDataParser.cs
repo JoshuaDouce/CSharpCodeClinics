@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using PondOreille.Models;
 
-namespace PondOreille.Parsers
+namespace WeatherData
 {
     public class TextFileWeatherDataParser : IWeatherDataParser
     {
@@ -110,7 +109,7 @@ namespace PondOreille.Parsers
                 }
             }
 
-            return filteredFiles.ToArray();            
+            return filteredFiles.ToArray();
         }
 
         private void LoadDataFromYearlyFile(List<WeatherDataRecord> data, string file)
@@ -135,7 +134,8 @@ namespace PondOreille.Parsers
         {
             var splitData = line.Split('\t');
 
-            var record = new WeatherDataRecord() {
+            var record = new WeatherDataRecord()
+            {
                 Timestamp = DateTimeStringParser.ParseDateTimeString(splitData[0]),
                 AirTemperature = decimal.Parse(splitData[1]),
                 BarometricPressure = decimal.Parse(splitData[2]),

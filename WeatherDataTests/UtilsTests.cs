@@ -1,28 +1,29 @@
-﻿using NUnit.Framework;
-using PondOreille;
-using PondOreille.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WeatherData;
 
-namespace PondOreilleTests
+namespace WeatherDataTests
 {
-    class UtilsTests
+    [TestClass]
+    public class UtilsTests
     {
-        [Test]
-        public void GetCoefficent_Returns_CorrectValue() {
+        [TestMethod]
+        public void GetCoefficent_Returns_CorrectValue()
+        {
             //act
             var data = new List<WeatherDataRecord>();
-            data.Add(new WeatherDataRecord() {
+            data.Add(new WeatherDataRecord()
+            {
                 Timestamp = new DateTime(2012, 01, 01, 01, 01, 01),
                 AirTemperature = 10,
                 BarometricPressure = 10,
                 DewPoint = 10,
-                Humidity = 50, 
+                Humidity = 50,
                 WindDir = 10,
                 WindGust = 10,
                 WindSpeed = 10
-            });;
+            }); ;
             data.Add(new WeatherDataRecord()
             {
                 Timestamp = new DateTime(2012, 01, 01, 02, 01, 01),
@@ -93,8 +94,8 @@ namespace PondOreilleTests
             var result = Utils.GetCoeffectient(data, new DateTime(2012, 01, 01, 01, 01, 01));
 
             //assert
-            Assert.That(result, Is.Not.EqualTo(0));
-            Assert.That(result, Is.EqualTo(0.59560229445506685));
+            Assert.AreNotEqual(result, 0);
+            Assert.AreEqual(result, 0.59560229445506685);
         }
     }
 }

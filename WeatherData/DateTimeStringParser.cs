@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace PondOreille.Parsers
+namespace WeatherData
 {
     public static class DateTimeStringParser
     {
@@ -16,14 +14,6 @@ namespace PondOreille.Parsers
             var second = int.Parse(dateTimeString.Substring(17, 2));
 
             return new DateTime(year, month, day, hour, minute, second);
-        }
-
-        public static DateTime ParseDateString(string dateString) {
-            var year = int.Parse(dateString.Substring(0, 4));
-            var month = int.Parse(dateString.Substring(5, 2));
-            var day = int.Parse(dateString.Substring(8, 2));
-
-            return new DateTime(year, month, day);
         }
     }
 }
