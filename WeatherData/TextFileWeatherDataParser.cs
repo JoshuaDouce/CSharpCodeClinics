@@ -76,11 +76,11 @@ namespace WeatherData
 
         private List<WeatherDataRecord> GetDataForFromAndToDate(List<WeatherDataRecord> data)
         {
-            return data
-                .Where(x => x.Timestamp.Year >= FromDate.Value.Year && x.Timestamp.Year <= ToDate.Value.Year)
-                .Where(x => x.Timestamp.Month >= FromDate.Value.Month && x.Timestamp.Month <= ToDate.Value.Month)
-                .Where(x => x.Timestamp.Day >= FromDate.Value.Day && x.Timestamp.Day <= ToDate.Value.Day)
+            var result = data
+                .Where(x => x.Timestamp >= FromDate && x.Timestamp <= ToDate)
                 .ToList();
+
+            return result;
         }
 
         private List<WeatherDataRecord> GetDataForFromDate(List<WeatherDataRecord> data)
