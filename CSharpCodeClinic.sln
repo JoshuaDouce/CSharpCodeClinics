@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PondOreille", "PondOreille\PondOreille.csproj", "{84ED32D1-2230-4337-BE0F-260520AE7DA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PondOreilleTests", "PondOreilleTests\PondOreilleTests.csproj", "{20A7618B-087E-4C13-9620-85F1E581F1DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PondOreilleTests", "PondOreilleTests\PondOreilleTests.csproj", "{20A7618B-087E-4C13-9620-85F1E581F1DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
