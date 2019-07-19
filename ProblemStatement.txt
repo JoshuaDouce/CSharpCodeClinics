@@ -1,0 +1,6 @@
+Create a program that converts mouse movement into musical pitches
+
+Right mouse button must be held down
+Move up or down changes the pitch
+Left + Right changes the volume
+Releasing mouse button stops the music

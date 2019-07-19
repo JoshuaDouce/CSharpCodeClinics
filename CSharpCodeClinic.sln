@@ -23,6 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chess", "Chess\Chess.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EightQueens", "EightQueens\EightQueens.csproj", "{9124EFB5-EDA0-4F04-B9EE-7CE71B0FA425}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccessingPeripherals", "AccessingPeripherals", "{10CA0B92-5A6F-4126-BDEF-33BDE1F5341C}"
+	ProjectSection(SolutionItems) = preProject
+		ProblemStatement.txt = ProblemStatement.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicalInstrument", "MusicalInstrument\MusicalInstrument.csproj", "{D5FFF629-1B75-4FE2-8CF3-947FC05D9CFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +64,10 @@ Global
 		{9124EFB5-EDA0-4F04-B9EE-7CE71B0FA425}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9124EFB5-EDA0-4F04-B9EE-7CE71B0FA425}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9124EFB5-EDA0-4F04-B9EE-7CE71B0FA425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FFF629-1B75-4FE2-8CF3-947FC05D9CFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5FFF629-1B75-4FE2-8CF3-947FC05D9CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5FFF629-1B75-4FE2-8CF3-947FC05D9CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5FFF629-1B75-4FE2-8CF3-947FC05D9CFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +80,7 @@ Global
 		{862BF4B8-B743-4523-B9AD-F85B663DAA2B} = {8500A60F-8A16-4A55-804D-AB4F313077F0}
 		{0F28179C-A5FA-452B-8A00-4D82BDCB8E28} = {8500A60F-8A16-4A55-804D-AB4F313077F0}
 		{9124EFB5-EDA0-4F04-B9EE-7CE71B0FA425} = {8500A60F-8A16-4A55-804D-AB4F313077F0}
+		{D5FFF629-1B75-4FE2-8CF3-947FC05D9CFD} = {10CA0B92-5A6F-4126-BDEF-33BDE1F5341C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC33645A-7223-4644-BBF2-B4DA3BC43747}
