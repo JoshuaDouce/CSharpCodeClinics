@@ -34,6 +34,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FacialRecognition", "Facial
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceRecognition", "FaceRecognition\FaceRecognition.csproj", "{59EF5882-3214-486D-9B45-05DA57AEFE5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard", "Dashboard\Dashboard.csproj", "{151010E2-11A6-4E3C-B144-CBB846A0A2DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RTDashboard", "RTDashboard", "{0129DA48-1C96-4BD8-B305-09D2A428FE24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{AFAF7CDB-0DC2-4790-84A3-3139118ED701}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataFiles", "DataFiles", "{B17693C8-B9F2-4736-8B67-410986AA5540}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\Ex_Files_Code_Clinic_C_Sharp\Exercise Files\Ch06\dashBoardData.csv = ..\..\..\Downloads\Ex_Files_Code_Clinic_C_Sharp\Exercise Files\Ch06\dashBoardData.csv
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +87,14 @@ Global
 		{59EF5882-3214-486D-9B45-05DA57AEFE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59EF5882-3214-486D-9B45-05DA57AEFE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59EF5882-3214-486D-9B45-05DA57AEFE5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151010E2-11A6-4E3C-B144-CBB846A0A2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151010E2-11A6-4E3C-B144-CBB846A0A2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151010E2-11A6-4E3C-B144-CBB846A0A2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151010E2-11A6-4E3C-B144-CBB846A0A2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFAF7CDB-0DC2-4790-84A3-3139118ED701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAF7CDB-0DC2-4790-84A3-3139118ED701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAF7CDB-0DC2-4790-84A3-3139118ED701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAF7CDB-0DC2-4790-84A3-3139118ED701}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +109,9 @@ Global
 		{9124EFB5-EDA0-4F04-B9EE-7CE71B0FA425} = {8500A60F-8A16-4A55-804D-AB4F313077F0}
 		{D5FFF629-1B75-4FE2-8CF3-947FC05D9CFD} = {10CA0B92-5A6F-4126-BDEF-33BDE1F5341C}
 		{59EF5882-3214-486D-9B45-05DA57AEFE5E} = {8C13431D-2048-4235-A941-A11749262513}
+		{151010E2-11A6-4E3C-B144-CBB846A0A2DF} = {0129DA48-1C96-4BD8-B305-09D2A428FE24}
+		{AFAF7CDB-0DC2-4790-84A3-3139118ED701} = {0129DA48-1C96-4BD8-B305-09D2A428FE24}
+		{B17693C8-B9F2-4736-8B67-410986AA5540} = {0129DA48-1C96-4BD8-B305-09D2A428FE24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC33645A-7223-4644-BBF2-B4DA3BC43747}
